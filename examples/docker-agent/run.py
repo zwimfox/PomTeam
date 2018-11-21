@@ -2,13 +2,13 @@
 
 from pommerman import agents
 from pommerman.runner import DockerAgentRunner
-
+from pommerman.agents import simple_agent_cautious_bomb
 
 class MyAgent(DockerAgentRunner):
     '''An example Docker agent class'''
 
     def __init__(self):
-        self._agent = agents.SimpleAgent()
+        self._agent =  simple_agent_cautious_bomb.SimpleAgentNoBombs()
 
     def init_agent(self, id, game_type):
         return self._agent.init_agent(id, game_type)
